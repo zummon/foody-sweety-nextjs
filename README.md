@@ -1,6 +1,6 @@
 need updating
 
-- Change the background in `./app/layout.jsx`
+- Change the background in `./app/layout.jsx` in `<body>` property style.
 - Add, edit and remove your contents in `./blogs` to generate the site pages.
 
 ## Dev tools
