@@ -1,7 +1,7 @@
 need updating
 
 - Change the background in `./app/layout.jsx` in `<body>` property style.
-- Add, edit and remove your contents in `./blogs` to generate the site pages.
+- Add, edit and remove your contents in `./app/[blog]` only `.md` files - just ignore `page.jsx` to generate the site pages.
 
 ## Dev tools
 
