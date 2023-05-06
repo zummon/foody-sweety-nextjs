@@ -1,10 +1,16 @@
-import Link from 'next/link';
-import { getAllBlogs } from '../lib/blog-parser';
+import Link from "next/link";
+import { getBlog, getBlogPaths } from "./[blog]/page";
+
+function getAllBlogs() {
+  return getBlogPaths()
+    .map((slug) => getBlog(slug))
+    .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+}
 
 export async function generateMetadata() {
-  let title = 'Foody Sweety';
-  let excerpt = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.';
-  let image = { src: '' };
+  let title = "Foody Sweety";
+  let excerpt = "Lorem ipsum dolor sit, amet consectetur adipisicing elit.";
+  let image = { src: "" };
   let date;
 
   return {
@@ -52,7 +58,7 @@ export default async function Home() {
             <p className="p-4 sm:p-8 leading-8">
               {tags.map((tag, tagIndex) => (
                 <a
-                  className={`font-semibold ${tagIndex !== 0 ? 'ml-2' : ''}`}
+                  className={`font-semibold ${tagIndex !== 0 ? "ml-2" : ""}`}
                   href={`#`}
                   key={`${index}-${tagIndex}`}
                 >
