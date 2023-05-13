@@ -2,7 +2,7 @@ Change the background in `./app/layout.jsx` in `<body>` property style.
 
 Add, edit and remove your `.md` files in `./app/[blog]` to generate the site pages.
 
-## Dev tools
+### Dev tools
 
 [Tailwind CSS](https://tailwindcss.com/)
 
@@ -20,6 +20,3 @@ Add, edit and remove your `.md` files in `./app/[blog]` to generate the site pag
 
 [Photo by Chris Ainsworth on Unsplash](https://unsplash.com/photos/Aae5ozmFb_s)
 
----
-
-[Made by zummon](https://zummon.page/)
