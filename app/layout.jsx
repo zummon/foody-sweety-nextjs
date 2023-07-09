@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import "../styles/globals.css";
 
 export default ({ children }) => {
   return (
@@ -6,7 +6,7 @@ export default ({ children }) => {
       <body
         className="bg-cover text-gray-50 bg-blend-soft-light bg-gray-900 min-h-screen"
         style={{
-          backgroundImage: 'url(https://source.unsplash.com/5f0QAmE7I3Q)',
+          backgroundImage: "url(https://source.unsplash.com/5f0QAmE7I3Q)",
         }}
       >
         {/* Header */}
@@ -21,13 +21,9 @@ export default ({ children }) => {
         {/* Footer */}
         <div className="p-4 sm:p-8 text-center max-w-screen-lg mx-auto">
           <p className="text-xl my-6">
-            <a
-              className="inline-block p-2"
-              href="https://zummon.page/"
-              target="_blank"
-            >
-              Made by zummon
-            </a>
+            <span className="inline-block p-2">
+              Made by zummon (Teerapat Anantarattanachai)
+            </span>
           </p>
           <p className="text-xl">
             <a className="inline-block p-2" href="#">
