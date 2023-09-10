@@ -15,4 +15,3 @@ Something breaks, needs upgrade. Let me know.
 - [Photo by Taylor Kiser on Unsplash](https://unsplash.com/photos/s7Vh1kg-clM)
 - [Photo by Ekrulila on Unsplash](https://unsplash.com/photos/09Egu9N-UyA)
 - [Photo by Chris Ainsworth on Unsplash](https://unsplash.com/photos/Aae5ozmFb_s)
-

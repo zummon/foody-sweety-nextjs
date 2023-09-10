@@ -1,18 +1,14 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { join } from "path";
 import { readdirSync, readFileSync } from "fs";
 
-const folderDir = join(process.cwd(), "content");
-
 export function getBlog(slug) {
-	const { data, content } = matter(readFileSync(join(folderDir, `${slug}.md`)));
-	const { date } = data;
+	const { data, content } = matter(readFileSync(`./app/[blog]/${slug}.md`));
 
 	return {
 		...data,
-		date: date.toLocaleDateString(undefined, {
+		date: data.date.toLocaleDateString(undefined, {
 			year: "numeric",
 			month: "long",
 			day: "numeric",
@@ -23,22 +19,26 @@ export function getBlog(slug) {
 }
 
 export function getBlogPaths() {
-	return readdirSync(folderDir)
-		.filter((file) => file.endsWith(".md"))
+	let paths = readdirSync("./app/[blog]")
+		.filter((file) => {
+			return file.endsWith(".md");
+		})
 		.map((file) => {
 			return file.slice(0, -3);
 		});
+
+	return paths;
 }
 
-export async function generateStaticParams() {
-	let paths = getBlogPaths();
+export function generateStaticParams() {
+	let paths = getBlogPaths().map((slug) => {
+		return { slug };
+	});
 
-	return paths.map((slug) => ({
-		slug,
-	}));
+	return paths;
 }
 
-export async function generateMetadata({ params: { blog } }) {
+export function generateMetadata({ params: { blog } }) {
 	let { date, excerpt, image, title } = getBlog(blog);
 
 	return {
@@ -64,7 +64,7 @@ export async function generateMetadata({ params: { blog } }) {
 	};
 }
 
-export default async function ({ params: { blog } }) {
+export default function ({ params: { blog } }) {
 	let { content, date, excerpt, image, tags, title } = getBlog(blog);
 
 	return (
