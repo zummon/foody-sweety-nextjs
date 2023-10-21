@@ -31,8 +31,8 @@ export function getBlogPaths() {
 }
 
 export function generateStaticParams() {
-	let paths = getBlogPaths().map((slug) => {
-		return { slug };
+	let paths = getBlogPaths().map((blog) => {
+		return { blog };
 	});
 
 	return paths;
