@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ff8761fcbf2c5f0eb6723c97c6cbdd71f1a19b14
 - Change the background in `./app/layout.jsx` in `<body>` property style.
 - Add, edit and remove your `.md` files in `./app/[blog]` to generate the site pages.
 
